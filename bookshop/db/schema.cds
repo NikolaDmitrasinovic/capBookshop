@@ -6,6 +6,7 @@ entity Books : managed {
   @mandatory title  : localized String(111);
   descr  : localized String(1111);
   @mandatory author : Association to Authors;
+  authors : Association to many Authors through BookAuthors;
   genre  : Association to Genres;
   stock  : Integer;
   price  : Decimal;
@@ -21,6 +22,11 @@ entity Authors : managed {
   placeOfBirth : String;
   placeOfDeath : String;
   books  : Association to many Books on books.author = $self;
+}
+
+entity BookAuthors : managed {
+  book   : Association to Books;
+  author : Association to Authors;
 }
 
 /** Hierarchically organized Code List for Genres */
