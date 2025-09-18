@@ -1,5 +1,5 @@
 ### Submit Order
-POST http://localhost:4004/browse/submitOrder
+POST http://localhost:4004/odata/v4/catalog/submitOrder()
 Content-Type: application/json
 Authorization: Basic alice:
 
